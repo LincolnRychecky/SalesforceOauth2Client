@@ -30,13 +30,13 @@ class salesforceAPIClient:
         data = df.to_dict('records')
         if object == "Lead":                    
             self.sf.bulk.Lead.update(data,batch_size=10000,use_serial=True)
-            print("Success! Leads updated with ML score and Auto Persona")
+            print("Success! Leads updated")
         elif object == "Account":
             self.sf.bulk.Account.update(data,batch_size=10000,use_serial=True)
-            print("Success! Leads updated with ML score and Auto Persona")
+            print("Success! Accounts updated")
         elif object == "Application":
             self.sf.bulk.Application.update(data,batch_size=10000,use_serial=True)
-            print("Success! Leads updated with ML score and Auto Persona")
+            print("Success! Applications updated")
         else:
             print("invalid object selection")
     """

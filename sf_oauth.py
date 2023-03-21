@@ -12,13 +12,13 @@ if __name__=="__main__":
     authorization = { "Authorization": "", "content-type": "application/json","Accept-Charset": "UTF-8"}
     if args.instance == "production":
         sfCredentials = json.load(open('Credentials/production-credentials.json'))
-        tokenURL = "https://login.salesforce.com/services/oauth2/token"
+        token_url = "https://login.salesforce.com/services/oauth2/token"
     elif args.instance == "sandbox" :
         sfCredentials = json.load(open('Credentials/sandbox-credentials.json'))
         token_url = "https://login.salesforce.com/services/oauth2/token"
 
     sfClient = salesforceAPIClient(
-        token_url = tokenURL,
+        token_url = token_url,
         client_id = sfCredentials["consumer key"],
         client_secret = sfCredentials["consumer secret"],
         refresh_token = sfCredentials["refresh token"]

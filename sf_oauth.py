@@ -15,7 +15,7 @@ if __name__=="__main__":
         token_url = "https://login.salesforce.com/services/oauth2/token"
     elif args.instance == "sandbox" :
         sfCredentials = json.load(open('Credentials/sandbox-credentials.json'))
-        token_url = "https://login.salesforce.com/services/oauth2/token"
+        token_url = "https://test.salesforce.com/services/oauth2/token"
 
     sfClient = salesforceAPIClient(
         token_url = token_url,
